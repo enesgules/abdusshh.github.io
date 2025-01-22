@@ -1,9 +1,14 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
-    --text-color: #333;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
     --background-color: #f5f6fa;
     --card-background: #ffffff;
+    --timeline-color: #e0e0e0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -25,12 +30,19 @@ body {
     padding: 0 2rem;
 }
 
+/* Header Styles */
 header {
     background-color: var(--card-background);
     border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
     margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .profile-section {
@@ -49,6 +61,11 @@ header {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
 }
 
 .profile-info {
@@ -88,19 +105,27 @@ h1 {
 .social-links a {
     color: var(--primary-color);
     font-size: 1.5rem;
-    transition: color 0.3s ease;
+    transition: var(--transition);
 }
 
 .social-links a:hover {
     color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
+/* Section Styles */
 section {
     background-color: var(--card-background);
     border-radius: 15px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -109,36 +134,123 @@ h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1.8rem;
 }
 
-.education-item {
-    margin-bottom: 1.5rem;
-}
-
-h3 {
+h2 i {
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
 }
 
-.degree {
+/* Timeline Styles */
+.timeline {
+    position: relative;
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--timeline-color);
+}
+
+.experience-item::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+}
+
+.company {
+    color: var(--secondary-color);
     font-weight: 500;
     margin-bottom: 0.25rem;
 }
 
 .duration {
-    color: #666;
+    color: var(--text-light);
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
+/* Skills Section */
+.two-column-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary-color);
+}
+
+/* Language Section */
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--timeline-color);
+}
+
+.language {
+    font-weight: 500;
+}
+
+.proficiency {
+    color: var(--text-light);
+}
+
+/* Lists */
+ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Links */
 a {
     color: var(--secondary-color);
     text-decoration: none;
+    transition: var(--transition);
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .profile-section {
         flex-direction: column;
@@ -152,4 +264,63 @@ a:hover {
     .social-links {
         justify-content: center;
     }
+
+    .two-column-section {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Achievement List */
+.achievement-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.achievement-list li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Activity Items */
+.activity-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--timeline-color);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.activity-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.activity-item p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Project Items */
+.project-item {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: rgba(52, 152, 219, 0.1);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.project-item:hover {
+    background-color: rgba(52, 152, 219, 0.2);
 }
