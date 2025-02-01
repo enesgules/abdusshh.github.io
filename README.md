@@ -5,7 +5,7 @@
 **Location:** Istanbul, Turkey  
 **GitHub:** [enesgules](https://github.com/enesgules)  
 **Phone:** +90 536 068 0101  
-**LinkedIn:** [abdullah-enes-güleş](https://www.linkedin.com/in/abdullah-enes-güleş)
+**LinkedIn:** [abdullah-enes-güleş](https://www.linkedin.com/in/abdullah-enes-gules)
 
 ---
 
