@@ -3,7 +3,7 @@
 **Boğaziçi University Computer Engineering**  
 **Email:** [abdullah.enes.gules@gmail.com](mailto:abdullah.enes.gules@gmail.com)  
 **Location:** Istanbul, Turkey  
-**GitHub:** [Abdusshh](https://github.com/Abdusshh)  
+**GitHub:** [enesgules](https://github.com/enesgules)  
 **Phone:** +90 536 068 0101  
 **LinkedIn:** [abdullah-enes-güleş](https://www.linkedin.com/in/abdullah-enes-güleş)
 
